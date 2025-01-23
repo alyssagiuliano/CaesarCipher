@@ -10,12 +10,15 @@ def caesarCipher(encode_decode, message, shift):
         # If character is uppercase, start is 65 (ASCII A), else its 97 (ASCII a)
         start = 65 if char.isupper() else 97
 
-        # ord(char): converts character into ASCII value
-        # - start: maps value within a range of 0 - 25
-        # + (encode)/ - (decode) shift: shifts the letter in the alphabet
-        # %26: ensure results stay within bounds of alphabet (wraps if past z/Z)
-        # + start: shifts value back to ASCII value
-        # wrapped in chr(): to convert ASCII value back to a character
-        # character then appended to output
-        output += chr((ord(char) - start + shift) % 26 + start)
+        if char.isalpha() == False:
+            output += char 
+        else:
+            # ord(char): converts character into ASCII value
+            # - start: maps value within a range of 0 - 25
+            # + (encode)/ - (decode) shift: shifts the letter in the alphabet
+            # %26: ensure results stay within bounds of alphabet (wraps if past z/Z)
+            # + start: shifts value back to ASCII value
+            # wrapped in chr(): to convert ASCII value back to a character
+            # character then appended to output
+            output += chr((ord(char) - start + shift) % 26 + start)
     print(output)
