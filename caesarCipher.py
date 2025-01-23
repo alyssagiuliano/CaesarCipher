@@ -9,11 +9,11 @@ def main():
     encode_decode = inputValidation.encodeDecodeValidation() 
     ciphertext_plaintext = "ciphertext" if encode_decode == "decode" else "plaintext"
 
-    message = input(f"Enter your {ciphertext_plaintext} message: ") # User enters a message to encode/ decode
+    message = inputValidation.messageValidation(ciphertext_plaintext) # User enters a message to encode/ decode (validated to ensure a message is entered)
 
     shift = inputValidation.shiftValidation() # User enters a shift (validated to only accept an integer between 1 - 25)
 
-    cipher.caesarCipher(encode_decode, message, shift) # caesarCipher function encodes/ decodes message
+    cipher.caesarCipher(encode_decode, message, shift) # caesarCipher function to encode/ decode message
 
 if __name__ == "__main__":
     main()

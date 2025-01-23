@@ -6,6 +6,14 @@ def encodeDecodeValidation():
         else:
             print("Please enter either encode or decode")
 
+def messageValidation(ciphertext_plaintext):
+    while True:
+        message = input(f"Enter your {ciphertext_plaintext} message: ")
+        if len(message) != 0:
+            return message
+        else:
+            print(f"Please enter your {ciphertext_plaintext} message")
+
 def shiftValidation():
     while True:
         try:
