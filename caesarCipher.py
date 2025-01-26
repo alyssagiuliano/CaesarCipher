@@ -13,7 +13,7 @@ def main():
 
     shift = inputValidation.shiftValidation() # User enters a shift (validated to only accept an integer between 1 - 25)
 
-    cipher.caesarCipher(mode, message, shift) # caesarCipher function to encode/ decode message
+    cipher.caesarCipher(mode, message, shift, ciphertext_plaintext) # caesarCipher function to encode/ decode message
 
 if __name__ == "__main__":
     main()

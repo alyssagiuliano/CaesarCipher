@@ -1,10 +1,13 @@
-def caesarCipher(encode_decode, message, shift):
+def caesarCipher(encode_decode, message, shift, ciphertext_plaintext):
 
     output = ""
 
     if encode_decode == "decode":
         # Makes shift a negative, hence shifts alphabet back and decodes (rather than encodes)
         shift = shift*-1 
+
+    # Sets ciphertext_plaintext to opposite for output
+    ciphertext_plaintext = "ciphertext" if ciphertext_plaintext == "plaintext" else "plaintext"
 
     for char in message:
         # If character is uppercase, start is 65 (ASCII A), else its 97 (ASCII a)
@@ -21,4 +24,4 @@ def caesarCipher(encode_decode, message, shift):
             # wrapped in chr(): to convert ASCII value back to a character
             # character then appended to output
             output += chr((ord(char) - start + shift) % 26 + start)
-    print(output)
+    print(f"Your {ciphertext_plaintext} is: {output}")
